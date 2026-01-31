@@ -1,5 +1,5 @@
 ## Add Two Numbers(leetcode 2):
-### You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+#### You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 #### Example 1:
     Input: l1 = [2,4,3], l2 = [5,6,4]
@@ -9,7 +9,7 @@
     1)The number of nodes in each linked list is in the range [1, 100].
     2)0 <= Node.val <= 9
     3)It is guaranteed that the list represents a number that does not have leading zeros.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### approach and thinking for this problem :
     -> first of all, the question says that the digits are stored in reverse order.
     that means if
@@ -47,8 +47,8 @@
     -> corner case:
     if both l1 and l2 become null but the carry is still not 0,
     we create one last node and store the carry value in it.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Time complexity:
+
+### Time complexity:
     O(max(n, m))
     Why? Let: n = number of nodes in l1 , m = number of nodes in l2
     You traverse each linked list once.
@@ -56,12 +56,12 @@
     The loop runs until the longer list ends (plus at most one extra step for carry)
     So the total time depends on the longer of the two lists:
     Time Complexity = O(max(n, m)).
-## Space Complexity:
+### Space Complexity:
     O(max(n, m)).
     A new linked list is created to store the result
     Its length is at most max(n, m) + 1 (if there is a final carry)
-    --------------------------------------------------------------------------------------------
-## CODE(in java)(Beats >=99 % at submission):
+   
+### CODE(in java)(Beats >=99 % at submission):
 ```java
 public class ListNode {
     int val;
