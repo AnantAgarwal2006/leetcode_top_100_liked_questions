@@ -10,7 +10,16 @@
     2)0 <= Node.val <= 9
     3)It is guaranteed that the list represents a number that does not have leading zeros.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## CODE:
+### approach and thinking for this problem :
+    ->first of all it is said that the digits are stored in reverse order in memory ; if l1=[2,4,3] then in memory the linked list appears as 3->4->2. and l2=[5,6,4] ,represented as 4->6->5. 
+    -> now the problem says to add the numbers and return the sum as a linked list.
+    so if we take sum of these numbers as 342+564 =807. then as the queston says it in memory it saves as 7->0->8.so we do need to reverse the linked list to sum up.
+    -> so simply traverse both lists , sum the digits and return the resultant             linked list .
+    -> conditions and variable used : as the questions also says that there is only a single digit possible in a node and if there is two digit comes as a sum of both list nodes then we take carry as we do in normal addition , and do include the carry value in the following node sum. 
+    -> we traverse both lists till both becomes null so that each of their node simultaneously sumed up 
+    -> corner case: if at last l1 and l2 both are null while traversing but the carry value is not 0 then we must add a new node and give it that carry value .
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## CODE(in java):
 ```java
 public class ListNode {
     int val;
