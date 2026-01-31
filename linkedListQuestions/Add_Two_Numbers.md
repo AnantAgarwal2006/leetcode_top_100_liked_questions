@@ -10,7 +10,7 @@
     2)0 <= Node.val <= 9
     3)It is guaranteed that the list represents a number that does not have leading zeros.
 
-### approach and thinking for this problem :
+### Approach and thinking for this problem :
     -> first of all, the question says that the digits are stored in reverse order.
     that means if
     l1 = [2,4,3] (linked list looks like 2->4->3) and
@@ -102,5 +102,5 @@ class Solution {
         return newNode.next;
     }
 }
--------------------------------------------------------------------------------------------------------------
+
 
