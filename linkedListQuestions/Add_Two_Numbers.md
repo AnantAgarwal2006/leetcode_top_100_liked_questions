@@ -11,22 +11,42 @@
     3)It is guaranteed that the list represents a number that does not have leading zeros.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### approach and thinking for this problem :
-    ->first of all it is said that the digits are stored in reverse order in memory ; 
-         if l1=[2,4,3] then in memory the linked list appears as 3->4->2. and l2=[5,6,4] ,represented as 4->6->5. 
+    -> first of all, the question says that the digits are stored in reverse order.
+    that means if
+    l1 = [2,4,3] (linked list looks like 2->4->3) and
+    l2 = [5,6,4] (linked list looks like 5->6->4),
+    then these lists actually represent the numbers 342 and 465.
     
-    -> now the problem says to add the numbers and return the sum as a linked list.
-        so if we take sum of these numbers as 342+564 =807.
-        then as the queston says it in memory it saves as 7->0->8.so we do need to reverse the linked list to sum up.
-        
-    -> so simply traverse both lists , sum the digits and return the resultant linked list .
-        
-    -> conditions and variable used : as the questions also says that there is only a single digit possible in a node
-        and if there is two digit comes as a sum ofboth list nodes then we take carry as we do in normal addition ,
-        and do include the carry value in the following node sum. 
-        
-    -> we traverse both lists till both becomes null so that each of their node simultaneously sumed up 
+    -> now we have to add these two numbers and return the result as a linked list.
+    342 + 465 = 807.
+    since the answer also has to be in reverse order, the final linked list will be
+    7->0->8.
+    because the digits are already given in reverse order, we do not need to reverse any list.
     
-    -> corner case: if at last l1 and l2 both are null while traversing but the carry value is not 0 then we must add a new node and give it that carry value .
+    -> we simply traverse both linked lists together and keep adding the digits one by one.
+    
+    -> as mentioned in the problem, each node contains only a single digit (0–9).
+    when the sum of two digits becomes a two-digit number, we handle it using a carry, just like normal addition.
+    
+    -> we keep traversing the lists while
+    (l1 != null || l2 != null || carry != 0).
+    this is because one list can end before the other, and we may still have a carry left.
+    
+    -> at each step, we first take
+    sum = carry,
+    then add the current values of l1 and l2 (only if they are not null).
+    
+    -> after calculating the sum, we create a new node that stores sum % 10.
+    the carry for the next step is calculated as sum / 10.
+    
+    -> for example, if sum = 10,
+    carry = 1 and the value stored in the node will be 0.
+    
+    -> we repeat this process for all nodes until both lists are finished and no carry remains.
+    
+    -> corner case:
+    if both l1 and l2 become null but the carry is still not 0,
+    we create one last node and store the carry value in it.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## CODE(in java):
 ```java
