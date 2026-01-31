@@ -9,18 +9,15 @@
     1)The number of nodes in each linked list is in the range [1, 100].
     2)0 <= Node.val <= 9
     3)It is guaranteed that the list represents a number that does not have leading zeros.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- ## CODE:
- /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## CODE:
+public class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+  }
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode newNode=new ListNode(0);
