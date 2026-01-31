@@ -48,7 +48,20 @@
     if both l1 and l2 become null but the carry is still not 0,
     we create one last node and store the carry value in it.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## CODE(in java):
+## Time complexity:
+    O(max(n, m))
+    Why? Let: n = number of nodes in l1 , m = number of nodes in l2
+    You traverse each linked list once.
+    Each loop iteration does constant work (addition, carry, node creation)
+    The loop runs until the longer list ends (plus at most one extra step for carry)
+    So the total time depends on the longer of the two lists:
+    Time Complexity = O(max(n, m)).
+## Space Complexity:
+    O(max(n, m)).
+    A new linked list is created to store the result
+    Its length is at most max(n, m) + 1 (if there is a final carry)
+    --------------------------------------------------------------------------------------------
+## CODE(in java)(Beats >=99 % at submission):
 ```java
 public class ListNode {
     int val;
@@ -89,4 +102,5 @@ class Solution {
         return newNode.next;
     }
 }
+-------------------------------------------------------------------------------------------------------------
 
